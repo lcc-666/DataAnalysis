@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 # 要求1：分别用列表和字典创建Series数据结构，查看其输出。
 # obj=pd.Series([1,-2,3,-4])
@@ -51,15 +52,70 @@ import numpy as np
 # print(df2)
 # print(df2.applymap(lambda x:"%.3f"%x))
 
-df=pd.DataFrame({"key1":["a","a","b","b","a"],
-                 "key2":["yes","no","yes","yes","no"],
-                 "data1":np.random.randn(5),
-                 "data2":np.random.randn(5)})
-grouped=df["data1"].groupby(df["key1"])
-print(grouped.size())
-print(grouped.mean())
+# df=pd.DataFrame({"key1":["a","a","b","b","a"],
+#                  "key2":["yes","no","yes","yes","no"],
+#                  "data1":np.random.randn(5),
+#                  "data2":np.random.randn(5)})
+# grouped=df["data1"].groupby(df["key1"])
+# print(grouped.size())
+# print(grouped.mean())
 
 # 要求6：
 # （1）读取testdata文件，利用agg函数统计数据中‘淋巴细胞计数’的和与均值、‘白细胞计数’的和与均值。
 # （2）统计不同性别人群的血小板计数
 # （3）同时输出淋巴细胞计数的均值、血小板计数的均值与标准差。
+
+# df = pd.read_excel('testdata.xls')
+#
+# lymphocyte_count_sum = df['淋巴细胞计数'].sum()
+# lymphocyte_count_mean = df['淋巴细胞计数'].mean()
+# white_blood_cell_count_sum = df['白细胞计数'].sum()
+# white_blood_cell_count_mean = df['白细胞计数'].mean()
+#
+# print(f"淋巴细胞计数的和为：{lymphocyte_count_sum}，均值为：{lymphocyte_count_mean}")
+# print(f"白细胞计数的和为：{white_blood_cell_count_sum}，均值为：{white_blood_cell_count_mean}")
+#
+# platelet_count_by_gender = df.groupby('性别')['血小板计数'].mean()
+# print("不同性别人群的血小板计数为：\n", platelet_count_by_gender)
+#
+# lymphocyte_count_mean = df['淋巴细胞计数'].mean()
+# platelet_count_mean = df['血小板计数'].mean()
+# platelet_count_std = df['血小板计数'].std()
+#
+# print(f"淋巴细胞计数的均值为：{lymphocyte_count_mean}")
+# print(f"血小板计数的均值为：{platelet_count_mean}，标准差为：{platelet_count_std}")
+
+# 要求7：利用series绘制线形图
+
+# s = pd.Series(np.random.normal(size=10))
+#
+# plt.plot(s)
+#
+# plt.xlabel('Index')
+# plt.ylabel('Value')
+#
+# plt.show()
+
+# 要求8：利用dataframe绘制柱状图，查看其结果。
+
+# stu = {"name":["xm","wf","zp","lh","lh"],
+#        "sex":["male","female","female","female","male"],
+#        "year":[1996,1997,1994,1999,1996]}
+#
+# df = pd.DataFrame(stu)
+# df.plot(kind='bar', x='name', y='year')
+# plt.show()
+
+# 要求9：利用dataframe绘制散点图
+# wd=pd.DataFrame(np.arange(10),columns=["A"])
+# wd["B"]=2*wd["A"]+4
+
+
+# 7.小费数据分析
+# （1）读取数据，并查看数据的描述信息。
+# （2）将列名修改为汉字，并显示前5行数据。
+# （3）分析男性顾客与女性顾客谁更慷慨。（将数据按照性别进行分组，查看分组后小费的情况）
+# （4）分析日期与小费之间的关系。（将数据按照星期分类，查看分类后的小费情况）
+# （5）性别+抽烟的组合因素对慷慨度的影响。（将数据按照性别和是否抽烟进行分组，查看分组后小费的情况）
+
+fdata=pd.read_excel("tips.xls")
