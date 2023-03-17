@@ -76,10 +76,7 @@ import csv
 # print(mask)
 # print(arr[mask,1])
 
-# 要求3：创建一个10*10的ndarray对象，且矩阵边界全为1，里面全为0；
-# arr=np.ones((10,10))
-# arr[1:-1,1:-1]=0
-# print(arr)
+
 
 # 要求：实现不同形状数组即数组a与数组b相加的运算，查看其结果，理解ufunc广播机制的原理。
 # a = np.arange(0,60,10).reshape(-1,1)
@@ -87,7 +84,7 @@ import csv
 # result = a + b
 # print(result)
 
-# 要求1：使用sort函数进行排序，使用argsort函数排序，查看其结果，说明两者区别。
+# 要求1：使用sort函数进行排序，使用argsort函数排序
 # arr = np.array([7, 9, 5, 2, 9, 4, 3, 1, 4, 3])
 # print(arr)
 # arr.sort()
