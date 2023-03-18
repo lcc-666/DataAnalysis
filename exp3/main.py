@@ -109,13 +109,50 @@ import matplotlib.pyplot as plt
 # 要求9：利用dataframe绘制散点图
 # wd=pd.DataFrame(np.arange(10),columns=["A"])
 # wd["B"]=2*wd["A"]+4
+# wd.plot(kind='scatter', x='A', y='B')
+# plt.show()
 
 
 # 7.小费数据分析
 # （1）读取数据，并查看数据的描述信息。
-# （2）将列名修改为汉字，并显示前5行数据。
-# （3）分析男性顾客与女性顾客谁更慷慨。（将数据按照性别进行分组，查看分组后小费的情况）
-# （4）分析日期与小费之间的关系。（将数据按照星期分类，查看分类后的小费情况）
-# （5）性别+抽烟的组合因素对慷慨度的影响。（将数据按照性别和是否抽烟进行分组，查看分组后小费的情况）
-
 fdata=pd.read_excel("tips.xls")
+# print(fdata.describe().head())
+
+# （2）将列名修改为汉字，并显示前5行数据。
+# fdata.rename(columns=({'total_bill':'消费总额','tip':'小费','sex':'性别','smoker':'是否抽烟',
+#                        'day':'星期','time':'聚餐时间段','size':'人数'}),inplace=True)
+# print(fdata.head())
+
+# （3）分析男性顾客与女性顾客谁更慷慨。（将数据按照性别进行分组，查看分组后小费的情况）
+# print(fdata.groupby('性别')['小费'].mean())
+
+# （4）分析日期与小费之间的关系。（将数据按照星期分类，查看分类后的小费情况）
+# print(fdata['星期'].unique())
+# r=fdata.groupby('星期')['小费'].mean()
+# fig=r.plot(kind='bar',x='星期',y='小费',fontsize=12,rot=36)
+# plt.show()
+
+# （5）性别+抽烟的组合因素对慷慨度的影响。（将数据按照性别和是否抽烟进行分组，查看分组后小费的情况）
+# r=fdata.groupby(['性别','是否抽烟'])['小费'].mean()
+# fig=r.plot(kind='bar',x=['性别','是否抽烟'],y='小费',fontsize=12,rot=30)
+# fig.axes.title.set_size(16)
+# plt.show()
+
+
+
+
+
+# fdata.plot(kind='scatter',x='消费总额',y='小费')
+#
+# print(fdata.groupby('性别')['小费'].mean())
+# print(fdata['星期'].unique())
+# r=fdata.groupby('星期')['小费'].mean()
+#
+# fig=r.plot(kind='bar',x='星期',y='小费',fontsize=12,rot=36)
+#
+# r=fdata.groupby(['性别','是否抽烟'])['小费'].mean()
+# fig=r.plot(kind='bar',x=['性别','是否抽烟'],y='小费',fontsize=12,rot=30)
+# fig.axes.title.set_size(16)
+# r=fdata.groupby('聚餐时间段')['小费'].mean()
+# fig=r.plot(kind='bar',x='聚餐时间',y='小费')
+# fig.axes.title.set_size(16)
