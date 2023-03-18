@@ -137,22 +137,3 @@ fdata=pd.read_excel("tips.xls")
 # fig=r.plot(kind='bar',x=['性别','是否抽烟'],y='小费',fontsize=12,rot=30)
 # fig.axes.title.set_size(16)
 # plt.show()
-
-
-
-
-
-# fdata.plot(kind='scatter',x='消费总额',y='小费')
-#
-# print(fdata.groupby('性别')['小费'].mean())
-# print(fdata['星期'].unique())
-# r=fdata.groupby('星期')['小费'].mean()
-#
-# fig=r.plot(kind='bar',x='星期',y='小费',fontsize=12,rot=36)
-#
-# r=fdata.groupby(['性别','是否抽烟'])['小费'].mean()
-# fig=r.plot(kind='bar',x=['性别','是否抽烟'],y='小费',fontsize=12,rot=30)
-# fig.axes.title.set_size(16)
-# r=fdata.groupby('聚餐时间段')['小费'].mean()
-# fig=r.plot(kind='bar',x='聚餐时间',y='小费')
-# fig.axes.title.set_size(16)
