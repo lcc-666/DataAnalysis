@@ -19,12 +19,12 @@ import matplotlib.pyplot as plt
 # print(result)
 
 # 要求2：练习以下例子，查看结果
-data1=pd.DataFrame(np.arange(6).reshape(2,3),columns=list("abc"))
-data2=pd.DataFrame(np.arange(20,26).reshape(2,3),columns=list("ayz"))
-data=pd.concat([data1,data2],axis=0)
-print(data1)
-print(data2)
-print(data)
+# data1=pd.DataFrame(np.arange(6).reshape(2,3),columns=list("abc"))
+# data2=pd.DataFrame(np.arange(20,26).reshape(2,3),columns=list("ayz"))
+# data=pd.concat([data1,data2],axis=0)
+# print(data1)
+# print(data2)
+# print(data)
 
 # 要求4：创建以下DataFrame，用combine_first方法进行合并，查看其结果。
 # dict1 = {"A": [None, "A0", "A1", "A2"],
