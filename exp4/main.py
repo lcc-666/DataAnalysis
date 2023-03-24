@@ -19,11 +19,12 @@ import matplotlib.pyplot as plt
 # print(result)
 
 # 要求2：练习以下例子，查看结果
-# data1=pd.DataFrame(np.arange(6).reshape(2,3),columns=list("abc"))
-# data2=pd.DataFrame(np.arange(20,26).reshape(2,3),columns=list("ayz"))
-# data=pd.concat([data1,data2],axis=0)
-# display(data1,data2,data)
-
+data1=pd.DataFrame(np.arange(6).reshape(2,3),columns=list("abc"))
+data2=pd.DataFrame(np.arange(20,26).reshape(2,3),columns=list("ayz"))
+data=pd.concat([data1,data2],axis=0)
+print(data1)
+print(data2)
+print(data)
 
 # 要求4：创建以下DataFrame，用combine_first方法进行合并，查看其结果。
 # dict1 = {"A": [None, "A0", "A1", "A2"],
@@ -89,7 +90,7 @@ import matplotlib.pyplot as plt
 # 要求10：练习例子：
 # 要求11如下：
 # （1）读取数据，并显示前5行数据。
-fdata=pd.read_excel('tips_mod.xls')
+# fdata=pd.read_excel('tips_mod.xls')
 # print(fdata.head())
 
 # （2）显示用餐时间time的不重复值。
@@ -104,14 +105,14 @@ fdata=pd.read_excel('tips_mod.xls')
 # print(fdata.isnull().sum())
 
 # （5）删除一行内有两个缺失值的数据。
-fdata.dropna(thresh=6,inplace=True)
+# fdata.dropna(thresh=6,inplace=True)
 # print(fdata.isnull().sum())
 
 # （6）删除sex或time为空的行
-fdata.dropna(subset=['sex','time'],inplace=True)
+# fdata.dropna(subset=['sex','time'],inplace=True)
 # print(fdata.isnull().sum())
 
 # （7）对剩余有空缺的数据用平均值替换。
-fdata.fillna(fdata.mean(numeric_only=True),inplace=True)
-print(fdata.isnull().sum())
+# fdata.fillna(fdata.mean(numeric_only=True),inplace=True)
+# print(fdata.isnull().sum())
 
