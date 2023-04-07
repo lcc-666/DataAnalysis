@@ -61,7 +61,9 @@ def sinplot(flip=2):
 # plt.show()
 
 # 要求8
-titanic = sns.load_dataset('titanic')
+# 二选一
+# titanic = sns.load_dataset('titanic')
+# titanic =pd.read_csv("titanic.csv")
 # 1）查看有无缺失值。
 # print(titanic.isnull().sum())
 
